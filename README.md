@@ -1,2 +1,2 @@
-# team-profile-page-creator
+# Team Profile Page Creator
 A command line tool built with node and inquirer that generates a team profile page for your intranet. Includes jest unit tests.
