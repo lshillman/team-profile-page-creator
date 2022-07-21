@@ -1,0 +1,22 @@
+{
+  "name": "team-profile-page-creator",
+  "version": "1.0.0",
+  "description": "[![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lshillman/team-profile-page-creator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lshillman/team-profile-page-creator/issues"
+  },
+  "homepage": "https://github.com/lshillman/team-profile-page-creator#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  }
+}
