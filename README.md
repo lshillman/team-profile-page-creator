@@ -9,6 +9,7 @@ A command line tool built with node.js and inquirer that generates a team profil
 * [Installation](#installation)
 * [Usage](#usage)
 * [Demo video](#demo-video)
+* [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
 ---
@@ -25,6 +26,9 @@ After completing the above instructions, run index.js from the command line. The
 
 
 
+
+## Tests
+Jest unit tests are included in /\_\_tests__. To run, enter "npm test" in your console as shown in the demo video. Tests verify that the four employee classes in /lib are behaving as expected.
 
 ## License
 This project uses the [Hippocratic License, v3.0](https://firstdonoharm.dev). TL;DR, it's not *quite* open source, but as long as you're not violating human rights, being a fossil fuel company, conducting military operations, etc (see license for full details), you can essentially treat it as open source.
