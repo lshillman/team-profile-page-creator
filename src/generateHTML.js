@@ -1,6 +1,8 @@
 
 let employeeCards = "";
 
+// each of these functions generates a card for a type of employee and adds the html to employeeCards. Then employeeCards gets inserted into the output of generatePageHTML.
+
 function generateManagerCard(name, id, email, officenumber) {
     employeeCards += `<section class="employee">
     <div class="cardheader">
