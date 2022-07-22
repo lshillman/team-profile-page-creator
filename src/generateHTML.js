@@ -70,3 +70,10 @@ function generatePageHTML () {
     </body>
     </html>`
 }
+
+module.exports = {
+    generateManagerCard,
+    generateEngineerCard,
+    generateInternCard,
+    generatePageHTML
+}
