@@ -2,7 +2,7 @@
 
 [![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 
-A command line tool built with node.js and inquirer that generates a team profile page for your intranet. Answer some questions, get a snazzy team page (view an [example](./dist/teamprofile.html)), and be the envy of the break room.
+A command line tool built with node.js and inquirer that generates a team profile page for your intranet. Answer some questions, get a snazzy team page (view an [example](https://lshillman.github.io/team-profile-page-creator/dist/teamprofile.html)), and be the envy of the break room.
 
 ---
 **Table of Contents**
