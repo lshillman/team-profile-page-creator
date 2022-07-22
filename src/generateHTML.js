@@ -2,7 +2,7 @@
 let employeeCards = "";
 
 function generateManagerCard(name, id, email, officenumber) {
-    return `<section class="employee">
+    employeeCards += `<section class="employee">
     <div class="cardheader">
     <h2>${name}</h2>
     <h3>📋 Manager</h3>
@@ -16,7 +16,7 @@ function generateManagerCard(name, id, email, officenumber) {
 }
 
 function generateEngineerCard(name, id, email, github) {
-    return `<section class="employee">
+    employeeCards += `<section class="employee">
     <div class="cardheader">
     <h2>${name}</h2>
     <h3>☕ Engineer</h3>
@@ -30,7 +30,7 @@ function generateEngineerCard(name, id, email, github) {
 }
 
 function generateInternCard(name, id, email, school) {
-    return `<section class="employee">
+    employeeCards += `<section class="employee">
     <div class="cardheader">
     <h2>${name}</h2>
     <h3>🎓 Intern</h3>

@@ -3,6 +3,8 @@ const generateHTML = require('./src/generateHTML');
 const fs = require('fs');
 
 const Manager = require('./lib/Manager'); // make sure we can access the Manager class
+const Engineer = require('./lib/Engineer'); // make sure we can access the Engineer class
+const Intern = require('./lib/Intern'); // make sure we can access the Intern class
 
 
 const mgrQuestions = [
@@ -46,7 +48,7 @@ const engQuestions = [
     },
     {
         type: 'input',
-        name: 'Github',
+        name: 'github',
         message: "Enter the engineer's github username:"
     },
 ]
@@ -55,22 +57,22 @@ const internQuestions = [
     {
         type: 'input',
         name: 'intName',
-        message: "Enter the engineer's name:"
+        message: "Enter the intern's name:"
     },
     {
         type: 'input',
         name: 'intID',
-        message: "Enter the engineer's ID #:"
+        message: "Enter the intern's ID #:"
     },
     {
         type: 'input',
         name: 'intEmail',
-        message: "Enter the engineer's email:"
+        message: "Enter the intern's email:"
     },
     {
         type: 'input',
-        name: 'School',
-        message: "Enter the engineer's github username:"
+        name: 'school',
+        message: "Enter the intern's school:"
     },
 ]
 
@@ -92,8 +94,6 @@ function beginMgrInquiry() {
         .then((answers) => {
             employees.push(new Manager(answers.mgrName, answers.mgrID, answers.mgrEmail, answers.office));
             getNextAction()
-            // console.log(employees[0].email)
-            // writeToFile(answers);
           });
 }
 
@@ -107,14 +107,45 @@ function getNextAction() {
             } else if (answers.nextAction == 'Add an intern') {
                 beginInternInquiry()
             } else {
-                writeToFile(employees)
+                writeToFile()
             }
-            console.log(answers);
           });
 }
 
-function writeToFile(data) {
-    fs.writeFile(`dist/teamprofile.html`, generateMarkdown(data, null, '\t'), (err) =>
+function beginEngineerInquiry() {
+    console.clear();
+    inquirer
+        .prompt(engQuestions)
+        .then((answers) => {
+            employees.push(new Engineer(answers.engName, answers.engID, answers.engEmail, answers.github));
+            getNextAction()
+          });
+}
+
+function beginInternInquiry() {
+    console.clear();
+    inquirer
+        .prompt(internQuestions)
+        .then((answers) => {
+            employees.push(new Intern(answers.intName, answers.intID, answers.intEmail, answers.school));
+            getNextAction()
+          });
+}
+
+function writeToFile() {
+    console.clear();
+    console.log(`Generating a page with ${employees.length} employees...`)
+    for (employee of employees) {
+        if (employee.constructor.toString().indexOf("Manager") > -1) {
+            generateHTML.generateManagerCard(employee.getName(), employee.getId(), employee.getEmail(), employee.getOffice());
+        } else if (employee.constructor.toString().indexOf("Engineer") > -1) {
+            generateHTML.generateEngineerCard(employee.getName(), employee.getId(), employee.getEmail(), employee.getGithub());
+        } else if (employee.constructor.toString().indexOf("Intern") > -1) {
+            generateHTML.generateInternCard(employee.getName(), employee.getId(), employee.getEmail(), employee.getSchool());
+        }
+    }
+
+    fs.writeFile(`dist/teamprofile.html`, generateHTML.generatePageHTML(), (err) =>
       err ? console.log(err) : console.log('Success!'))
 }
 
